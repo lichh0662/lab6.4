@@ -15,26 +15,26 @@ int main()
     cin >> name;
 
 
-    while (name != ".") { // make a set from the login
+    while (name != ".") { // сделать набор из логина
         if (student_set.find(name) != student_set.end()) {
-            student_rep.insert(name);// the set that repet here
+            student_rep.insert(name);// набор, который повторяется здесь
         }
         else
-            student_set.insert(name);// all the login here
+            student_set.insert(name);// все логины здесь
 
-        cout << "Enter your login: ";// the loop finish whene we enter "."
+        cout << "Enter your login: ";// цикл заканчивается, когда мы вводим "."
         cin >> name;
     }
 
-    for (auto i : student_rep) // the student that repeted a login 
-        student_set.erase(i);// we delete the login with the same name and we let just the first login
+    for (auto i : student_rep) // студент, который повторил вход в систему
+        student_set.erase(i);// удаляем логин с таким именем и пускаем только первый логин
 
 
-    cout << "\nAnswer:\n"; // show all the student
+    cout << "\nAnswer:\n"; // показать всем студент
     for (auto i : student_set)
         cout << "one login: " << i << endl;
 
-    for (auto i : student_rep) // the setudent who repeted the login
+    for (auto i : student_rep) // студент, который повторил вход
         cout << "a lot of login: " << i << endl;
 
 }
